@@ -1,6 +1,5 @@
-```yaml
 esphome:
-  name: my-air
+  name: pzem004
 
 esp32:
   board: esp32dev
@@ -19,7 +18,7 @@ ota:
 
 wifi:
   ssid: "myblue"
-  password: "PASSWORD"
+  password: "xxx"
 
   # Enable fallback hotspot (captive portal) in case wifi connection fails
   ap:
@@ -29,14 +28,13 @@ wifi:
 captive_portal:
     
 sensor:
-  - platform: sfa30
-    update_interval: 60s
-    formaldehyde:
-      name: "Formaldehyde"
+  - platform: aht10
+    variant: AHT20
     temperature:
-      name: "Temperature"
+      name: "Living Room Temperature"
     humidity:
-      name: "Humidity"
+      name: "Living Room Humidity"
+    update_interval: 15s
 
 i2c:
   sda: 21
@@ -44,4 +42,3 @@ i2c:
   scan: true
   id: bus_a
 
-```
