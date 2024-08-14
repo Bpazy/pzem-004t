@@ -1,0 +1,47 @@
+```yaml
+esphome:
+  name: my-air
+
+esp32:
+  board: esp32dev
+  framework:
+    type: arduino
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  password: ""
+
+ota:
+  password: ""
+
+wifi:
+  ssid: "myblue"
+  password: "PASSWORD"
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "My-Esp Fallback Hotspot"
+    password: "gpBPJAAAAAnA"
+
+captive_portal:
+    
+sensor:
+  - platform: sfa30
+    update_interval: 60s
+    formaldehyde:
+      name: "Formaldehyde"
+    temperature:
+      name: "Temperature"
+    humidity:
+      name: "Humidity"
+
+i2c:
+  sda: 21
+  scl: 22
+  scan: true
+  id: bus_a
+
+```
