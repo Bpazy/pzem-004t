@@ -65,7 +65,12 @@ sensor:
   - platform: uptime
     name: "${friendly_name} Uptime"
     id: uptime_sensor
-    update_interval: 1s
+    update_interval: 5s
+
+  # WiFi信号强度
+  - platform: wifi_signal
+    name: "${friendly_name} WiFi Signal"
+    update_interval: 5s
 
 i2c:
   sda: 21
