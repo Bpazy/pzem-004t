@@ -72,6 +72,22 @@ sensor:
     name: "${friendly_name} WiFi Signal"
     update_interval: 5s
 
+text_sensor:
+  - platform: wifi_info
+    ip_address:
+      name: "${friendly_name} IP Address"
+      address_0:
+        name: "${friendly_name} IP Address 0"
+    ssid:
+      name: "${friendly_name} Connected SSID"
+    bssid:
+      name: "${friendly_name} Connected BSSID"
+    mac_address:
+      name: "${friendly_name} Mac Wifi Address"
+    scan_results:
+      name: "${friendly_name} Latest Scan Results"
+    dns_address:
+      name: "${friendly_name} DNS Address"
 i2c:
   sda: 21
   scl: 22
