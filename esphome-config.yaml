@@ -4,6 +4,10 @@ substitutions:
 
 esphome:
   name: pzem004
+  on_boot:
+    then:
+      - delay: 5s
+      - pzemac.reset_energy: pzem004
 
 esp32:
   board: esp32dev
@@ -60,6 +64,7 @@ sensor:
     update_interval: 15s
 
   - platform: pzemac
+    id: pzem004
     current:
       name: "${friendly_name} Current"
     voltage:
