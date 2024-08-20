@@ -73,11 +73,31 @@ sensor:
       name: "${friendly_name} Energy"
     power:
       name: "${friendly_name} Power"
+      id: pzem004_power
     frequency:
       name: "${friendly_name} Frequency"
     power_factor:
       name: "${friendly_name} Power Factor"
     update_interval: 15s
+
+  - platform: total_daily_energy
+    name: "${upper_devicename} Total Daily Energy"
+    power_id: pzem004_power
+    filters:
+        # Multiplication factor from W to kW is 0.001
+        - multiply: 0.001
+    unit_of_measurement: kWh
+    icon: mdi:counter
+
+  - platform: integration
+    name: "${upper_devicename} Energy Meter" 
+    sensor: pzem004_power
+    time_unit: h
+    filters:
+      # Multiplication factor from W to kW is 0.001
+      - lambda: return x * (0.001) + 2282;
+    unit_of_measurement: kWh
+    icon: mdi:counter
 
   # 启动时间
   - platform: uptime
