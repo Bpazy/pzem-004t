@@ -25,6 +25,10 @@ api:
 ota:
   password: ""
 
+time:
+  - platform: homeassistant
+    id: homeassistant_time
+
 text_sensor:
   - platform: version
     name: "${friendly_name} Version"
@@ -81,7 +85,7 @@ sensor:
     update_interval: 15s
 
   - platform: total_daily_energy
-    name: "${upper_devicename} Total Daily Energy"
+    name: "${friendly_name} Total Daily Energy"
     power_id: pzem004_power
     filters:
         # Multiplication factor from W to kW is 0.001
@@ -90,12 +94,12 @@ sensor:
     icon: mdi:counter
 
   - platform: integration
-    name: "${upper_devicename} Energy Meter" 
+    name: "${friendly_name} Energy Meter" 
     sensor: pzem004_power
     time_unit: h
     filters:
       # Multiplication factor from W to kW is 0.001
-      - lambda: return x * (0.001) + 2282;
+      - lambda: return x * (0.001) + 2350;
     unit_of_measurement: kWh
     icon: mdi:counter
 
