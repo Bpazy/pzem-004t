@@ -56,8 +56,11 @@ utility_meter:
 
 ```
 
-这样就可以做下图这样的选择了:
-<img width="408" alt="image" src="https://github.com/user-attachments/assets/d24fb3fd-8b1f-470f-bc91-f6bbf1c1fe24">
-效果如图:
+**这样就可以做下图这样的选择了:**
+
+<img width="200" alt="image" src="https://github.com/user-attachments/assets/d24fb3fd-8b1f-470f-bc91-f6bbf1c1fe24">
+
+**效果如图:**
+
 <img width="925" alt="image" src="https://github.com/user-attachments/assets/4e9c475f-6c55-4c1d-85bf-2744138cd541">
 
