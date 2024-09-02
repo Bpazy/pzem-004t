@@ -33,11 +33,11 @@ sensor:
     sensors:
        current_stage:
          value_template: >
-           {% if states("sensor.pzem004_yearly_energy") | float <= 2760 %}
+           {% if states("sensor.pzem004_yearly_energy") | float <= 2760000 %}
              1
-           {% elif states("sensor.pzem004_yearly_energy") | float > 2760 and states("sensor.pzem004_yearly_energy") | float <= 4800 %}
+           {% elif states("sensor.pzem004_yearly_energy") | float > 2760000 and states("sensor.pzem004_yearly_energy") | float <= 4800000 %}
              2
-           {% elif states("sensor.pzem004_yearly_energy") | float > 4800 %}
+           {% elif states("sensor.pzem004_yearly_energy") | float > 4800000 %}
              3
            {% endif %}
          friendly_name:  '当前阶梯'
